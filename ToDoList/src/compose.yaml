@@ -1,0 +1,24 @@
+volumes:
+  app-vol:
+networks:
+  app-net:
+
+services:
+  app-python:
+    depends_on:
+      - psql
+    build: .
+    ports:
+      - 3000:3000
+    networks:
+      - app-net
+  psql:
+    image: postgres:latest
+    ports:
+     - 9090:5432
+    environment:
+      POSTGRES_PASSWORD: root
+    volumes:
+      - app-vol:/var/lib/postgresql/data
+    networks:
+      - app-net

@@ -1,0 +1,7 @@
+1 - docker pull ubuntu
+2 - docker run -it ubuntu /bin/bash
+
+----- No bash do container---
+3 - apt update
+4 - apt install curl
+5 - curl --version
