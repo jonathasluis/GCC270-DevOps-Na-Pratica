@@ -13,8 +13,7 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 if not database_exists(url):
     create_database(url)
-    ##db.create_all()
-migrate = Migrate(app, db)
+#migrate = Migrate(app, db)
 
 
 class TodoList(db.Model):
@@ -46,7 +45,8 @@ class Todo(db.Model):
         return f"\n<Todo id:{self.id}, description:{self.description} completed:{self.completed}>"
 
 # Commented due to our use of migrations
-##db.create_all()
+with app.app_context():
+    db.create_all()
 
 
 @app.route('/todos/<todolist_id>', methods=['POST'])

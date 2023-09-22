@@ -5,5 +5,4 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 EXPOSE 3000
 
-# Execute o arquivo .sh como parte do comando CMD
-CMD flask db migrate && flask db upgrade && python app.py
+CMD ["sh", "-c", "sleep 5 && python app.py"]

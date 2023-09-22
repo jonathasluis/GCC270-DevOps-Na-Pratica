@@ -13,7 +13,7 @@ services:
     networks:
       - app-net
   psql:
-    image: postgres:latest
+    image: postgres:alpine
     ports:
      - 9090:5432
     environment:
