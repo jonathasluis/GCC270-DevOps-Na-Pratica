@@ -63,12 +63,12 @@ kubectl get pod
 kubectl apply -f my-deployment.yaml 
 ```
 
-# status update
+## status update
 ```shell
 kubectl get pod -w
 ```
 
-# rollBack
+## rollBack
 ```shell
 kubectl rollout undo deployment/my-deployment
 ```
