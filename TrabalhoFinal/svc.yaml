@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: deploy
+  namespace: default
+spec:
+  selector:
+    app: deploy
+  type: ClusterIP
+  ports:
+  - name: deploy
+    protocol: TCP
+    port: 3000
+    targetPort: 3000
