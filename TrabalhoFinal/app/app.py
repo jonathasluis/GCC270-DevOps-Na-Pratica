@@ -3,7 +3,7 @@ from flask import Flask, jsonify, render_template, request, redirect, url_for, a
 app = Flask(__name__)
 
 # In-memory data structures
-todo_lists = {}
+todo_lists = {} 
 todos = {}
 
 
